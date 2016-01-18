@@ -1,0 +1,42 @@
+{
+  "name": "sgr-composer",
+  "version": "0.0.1",
+  "description": "Compose SGR codes from RGB values",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ./test/basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkGriffiths/sgr-composer.git"
+  },
+  "keywords": [
+    "CLI",
+    "TTY",
+    "SGR",
+    "color",
+    "colour",
+    "24bit",
+    "truecolor",
+    "xterm",
+    "iterm"
+  ],
+  "author": "Mark Griffiths <mark@thebespokepixel.com> (http://thebespokepixel.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarkGriffiths/sgr-composer/issues"
+  },
+  "homepage": "https://github.com/MarkGriffiths/sgr-composer#readme",
+  "dependencies": {
+    "color-convert": "^1.0.0"
+  },
+  "devDependencies": {
+    "xo": "^0.12.1"
+  },
+  "engines": {
+    "node": ">= 4.2 <6.0"
+  },
+  "xo": {
+    "semicolon": false
+  }
+}
