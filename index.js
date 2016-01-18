@@ -113,11 +113,6 @@ function setStyles(styles_, excluded_) {
 
 class SGRcomposer {
 	constructor(targetDepth_, styles_) {
-		this.styles = parseStyles(styles_)
-		this.colorSGR = (this.styles.rgb) ?
-			parseColor(this.styles.rgb, this._depth, this.styles.background) :
-			{in: '', out: ''}
-		this.styleSGR = setStyles(this.styles)
 		this._depth = (depth_ => {
 			switch (true) {
 				case [3, '16m', 'millions'].indexOf(depth_) !== -1:
@@ -130,6 +125,11 @@ class SGRcomposer {
 					return 0
 			}
 		})(targetDepth_)
+		this.styles = parseStyles(styles_)
+		this.colorSGR = ('rgb' in this.styles) ?
+			parseColor(this.styles.rgb, this._depth, this.styles.background) :
+			{in: '', out: ''}
+		this.styleSGR = setStyles(this.styles)
 	}
 
 	get depth() {
