@@ -4,7 +4,7 @@
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && gulp test"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "color-convert": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^0.11.0",
+    "@thebespokepixel/cordial": "^0.2.7",
     "xo": "^0.12.1"
   },
   "engines": {
@@ -46,5 +46,6 @@
   },
   "xo": {
     "semicolon": false
-  }
+  },
+  "build_number": 1
 }
