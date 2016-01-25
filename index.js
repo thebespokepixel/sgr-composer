@@ -11,7 +11,7 @@ const _SGRparts = {
 	start: '\u001b[',
 	fg: [38, 39],
 	bg: [48, 49],
-	reset: {in: 0, out: 0},
+	reset: {in: 0, out: ''},
 	end: 'm'
 }
 
@@ -24,17 +24,20 @@ const _styles = {
 	invert: [7, 27]
 }
 
-function parseColor(rgb_, depth_, bg_) {
-	assert(Array.isArray(rgb_) && rgb_.length === 3, `provided RGB value needs to be an array, i.e [R, G, B], not ${rgb_}.`)
+function parseColor(color_, depth_, bg_) {
+	if (['reset', 'normal'].indexOf(color_) !== -1) {
+		return _SGRparts.reset
+	}
+	assert(Array.isArray(color_) && color_.length === 3, `provided RGB value needs to be an array, i.e [R, G, B], not ${color_}.`)
 	return (() => {
 		let color = (() => {
 			switch (depth_) {
 				case 3:
-					return rgb_.join(';')
+					return color_.join(';')
 				case 2:
-					return converter.rgb.ansi256(rgb_)
+					return converter.rgb.ansi256(color_)
 				case 1:
-					return converter.rgb.ansi16(rgb_)
+					return converter.rgb.ansi16(color_)
 				default:
 					return ''
 			}
@@ -57,8 +60,8 @@ function parseColor(rgb_, depth_, bg_) {
 		}
 
 		return {
-			in: mode.in + color,
-			out: mode.out
+			in: `${mode.in}${color}`,
+			out: `${mode.out}`
 		}
 	})()
 }
@@ -94,20 +97,19 @@ function setStyles(styles_, excluded_) {
 	let excluded = (excluded_ === undefined) ? {} : excluded_
 	let sgrIn = []
 	let sgrOut = []
-
 	Object.keys(_styles).forEach(key_ => {
-		if (styles_[key_] && !(key_ in excluded)) {
-			if (sgrIn.indexOf(key_) === -1) {
+		if (styles_[key_] && (!excluded[key_])) {
+			if (sgrIn.indexOf(_styles[key_][0]) === -1) {
 				sgrIn.push(_styles[key_][0])
 			}
-			if (sgrOut.indexOf(key_) === -1) {
+			if (sgrOut.indexOf(_styles[key_][1]) === -1) {
 				sgrOut.unshift(_styles[key_][1])
 			}
 		}
 	})
 	return {
-		in: ((sgrIn.length > 0) ? ';' : '') + sgrIn.join(';'),
-		out: sgrOut.join(';') + ((sgrOut.length > 0) ? ';' : '')
+		in: sgrIn.join(';'),
+		out: sgrOut.join(';')
 	}
 }
 
@@ -125,39 +127,78 @@ class SGRcomposer {
 					return 0
 			}
 		})(targetDepth_)
-		this.styles = parseStyles(styles_)
-		this.colorSGR = ('rgb' in this.styles) ?
-			parseColor(this.styles.rgb, this._depth, this.styles.background) :
-			{in: '', out: ''}
-		this.styleSGR = setStyles(this.styles)
+		this.colorSGR = {in: '', out: ''}
+		this.style = styles_
 	}
 
 	get depth() {
 		return this._depth
 	}
 
-	style(styles_) {
-		this.styles = parseStyles(styles_)
-		this.colorSGR = (this.styles.rgb) ?
-			parseColor(this.styles.rgb, this._depth, this.styles.background) :
-			this.colorSGR
-		this.styleSGR = setStyles(this.styles)
+	get color() {
+		return this._color
 	}
 
-	color(rgb_) {
-		this.colorSGR = (rgb_ === 'reset') ?
-			_SGRparts.reset :
-			parseColor(rgb_, this._depth, false)
+	get hex() {
+		return converter.rgb.hex(this._color)
+	}
+
+	get red() {
+		return this._color[0]
+	}
+
+	get green() {
+		return this._color[1]
+	}
+
+	get blue() {
+		return this._color[2]
+	}
+
+	get style() {
+		let styles = ''
+		Object.keys(this.styles).forEach(key_ => {
+			if (this.styles[key_]) {
+				let space = (styles === '') ? '' : ' '
+				styles += (key_ === 'color') ? '' : `${space}${key_}`
+			}
+		})
+		return (styles === '') ? null : styles
+	}
+
+	get styleArray() {
+		let styles = []
+		Object.keys(this.styles).forEach(key_ => (this.styles[key_] === true) && styles.push(key_))
+		return styles
+	}
+
+	set style(styles_) {
+		this.styles = parseStyles(styles_)
+		this.colorSGR = ('color' in this.styles) ?
+			parseColor(this.styles.color, this._depth, this.styles.background) :
+			this.colorSGR
+		this.styleSGR = setStyles(this.styles)
+		this._color = ('color' in this.styles) ? this.styles.color : this._color
+	}
+
+	set color(color_) {
+		this.colorSGR = parseColor(color_, this._depth, false)
+		this._color = color_
 	}
 
 	sgr(exclusions_) {
-		this.styleSGR = (exclusions_ === undefined) ?
+		let styleSGRtemp = (exclusions_ === undefined) ?
 			this.styleSGR :
 			setStyles(this.styles, parseStyles(exclusions_))
-		return {
-			in: `${_SGRparts.start}${this.colorSGR.in}${this.styleSGR.in}${_SGRparts.end}`,
-			out: `${_SGRparts.start}${this.styleSGR.out}${this.colorSGR.out}${_SGRparts.end}`
+
+		let inJoin = (this.colorSGR.in !== '' && styleSGRtemp.in !== '') ? ';' : ''
+		let outJoin = (this.colorSGR.out !== '' && styleSGRtemp.out !== '') ? ';' : ''
+		let output = {
+			in: `${_SGRparts.start}${this.colorSGR.in}${inJoin}${styleSGRtemp.in}${_SGRparts.end}`,
+			out: `${_SGRparts.start}${styleSGRtemp.out}${outJoin}${this.colorSGR.out}${_SGRparts.end}`
 		}
+		Object.defineProperty(output, 'toString', {value: () => output.in})
+		return output
 	}
 }
 

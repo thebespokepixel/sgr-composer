@@ -4,7 +4,7 @@
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "scripts": {
-    "test": "xo && ./test/basic.js"
+    "test": "xo && ava"
   },
   "repository": {
     "type": "git",
@@ -31,10 +31,18 @@
     "color-convert": "^1.0.0"
   },
   "devDependencies": {
+    "ava": "^0.11.0",
     "xo": "^0.12.1"
   },
   "engines": {
     "node": ">= 4.2 <6.0"
+  },
+  "ava": {
+    "files": [
+      "test/*.js"
+    ],
+    "failFast": true,
+    "verbose": true
   },
   "xo": {
     "semicolon": false
