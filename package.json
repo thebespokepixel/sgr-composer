@@ -31,7 +31,7 @@
     "color-convert": "^1.0.0"
   },
   "devDependencies": {
-    "@thebespokepixel/cordial": "^0.2.12",
+    "@thebespokepixel/cordial": "^0.3.0",
     "xo": "^0.12.1"
   },
   "engines": {
@@ -41,7 +41,6 @@
     "files": [
       "test/*.js"
     ],
-    "failFast": true,
     "verbose": true
   },
   "xo": {
