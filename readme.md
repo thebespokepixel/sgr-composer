@@ -1,14 +1,14 @@
 # sgr-composer
-Compose SGR codes from RGB values, with additional styling (supports 24bit SGR).
-
-![Project status][project-badge]
+>Compose SGR codes from RGB values, with additional styling (supports 24bit SGR).
+>
+>![Project status][project-badge]
 [![Build Status][build-badge]][travis]
 [![Dependency Status][david-badge]][david]
 [![devDependency Status][david-dev-badge]][david-dev]
 [![npm Status][npm-badge]][npm]
 [![XO code style][xo-badge]][xo]
-
-:nut_and_bolt: [Work in Progress] :nut_and_bolt:
+>
+>:nut_and_bolt: [Work in Progress] :nut_and_bolt:
 
 
 [project-badge]: http://img.shields.io/badge/status-alpha-red.svg?style=flat

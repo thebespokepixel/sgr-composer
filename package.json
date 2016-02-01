@@ -31,7 +31,7 @@
     "color-convert": "^1.0.0"
   },
   "devDependencies": {
-    "@thebespokepixel/cordial": "^0.3.0",
+    "@thebespokepixel/cordial": "*",
     "xo": "^0.12.1"
   },
   "engines": {
@@ -44,7 +44,8 @@
     "verbose": true
   },
   "xo": {
-    "semicolon": false
+    "semicolon": false,
+    "esnext": true
   },
   "build_number": 0
 }
