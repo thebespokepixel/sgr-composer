@@ -30,7 +30,7 @@ function parseColor(color_, depth_, bg_) {
 	}
 	assert(Array.isArray(color_) && color_.length === 3, `provided RGB value needs to be an array, i.e [R, G, B], not ${color_}.`)
 	return (() => {
-		let color = (() => {
+		const color = (() => {
 			switch (depth_) {
 				case 3:
 					return color_.join(';')
@@ -42,9 +42,9 @@ function parseColor(color_, depth_, bg_) {
 					return ''
 			}
 		})()
-		let mode = {
+		const mode = {
 			in: (() => {
-				let fgBg = (bg_) ? _SGRparts.bg[0] : _SGRparts.fg[0]
+				const fgBg = (bg_) ? _SGRparts.bg[0] : _SGRparts.fg[0]
 				switch (depth_) {
 					case 3:
 						return `${fgBg};2;`
@@ -67,7 +67,7 @@ function parseColor(color_, depth_, bg_) {
 }
 
 function parseStyles(styles_) {
-	let styles = {
+	const styles = {
 		background: false,
 		bold: false,
 		dim: false,
@@ -94,9 +94,9 @@ function parseStyles(styles_) {
 }
 
 function setStyles(styles_, excluded_) {
-	let excluded = (excluded_ === undefined) ? {} : excluded_
-	let sgrIn = []
-	let sgrOut = []
+	const excluded = (excluded_ === undefined) ? {} : excluded_
+	const sgrIn = []
+	const sgrOut = []
 	Object.keys(_styles).forEach(key_ => {
 		if (styles_[key_] && (!excluded[key_])) {
 			if (sgrIn.indexOf(_styles[key_][0]) === -1) {
@@ -159,7 +159,7 @@ class SGRcomposer {
 		let styles = ''
 		Object.keys(this.styles).forEach(key_ => {
 			if (this.styles[key_]) {
-				let space = (styles === '') ? '' : ' '
+				const space = (styles === '') ? '' : ' '
 				styles += (key_ === 'color') ? '' : `${space}${key_}`
 			}
 		})
@@ -167,7 +167,7 @@ class SGRcomposer {
 	}
 
 	get styleArray() {
-		let styles = []
+		const styles = []
 		Object.keys(this.styles).forEach(key_ => (this.styles[key_] === true) && styles.push(key_))
 		return styles
 	}
@@ -187,13 +187,13 @@ class SGRcomposer {
 	}
 
 	sgr(exclusions_) {
-		let styleSGRtemp = (exclusions_ === undefined) ?
+		const styleSGRtemp = (exclusions_ === undefined) ?
 			this.styleSGR :
 			setStyles(this.styles, parseStyles(exclusions_))
 
-		let inJoin = (this.colorSGR.in !== '' && styleSGRtemp.in !== '') ? ';' : ''
-		let outJoin = (this.colorSGR.out !== '' && styleSGRtemp.out !== '') ? ';' : ''
-		let output = {
+		const inJoin = (this.colorSGR.in !== '' && styleSGRtemp.in !== '') ? ';' : ''
+		const outJoin = (this.colorSGR.out !== '' && styleSGRtemp.out !== '') ? ';' : ''
+		const output = {
 			in: `${_SGRparts.start}${this.colorSGR.in}${inJoin}${styleSGRtemp.in}${_SGRparts.end}`,
 			out: `${_SGRparts.start}${styleSGRtemp.out}${outJoin}${this.colorSGR.out}${_SGRparts.end}`
 		}
