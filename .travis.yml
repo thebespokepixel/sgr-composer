@@ -5,9 +5,6 @@ node_js:
 sudo: false
 before_install:
   - npm i -g npm@latest
-before_script:
-  - npm install -g gulp
-script: gulp test --verbose
 notifications:
   webhooks:
     urls:
