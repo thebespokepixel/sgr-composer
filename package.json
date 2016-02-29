@@ -1,10 +1,10 @@
 {
   "name": "sgr-composer",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "scripts": {
-    "test": "xo && gulp test"
+    "test": "gulp test --verbose"
   },
   "repository": {
     "type": "git",
@@ -31,8 +31,7 @@
     "color-convert": "^1.0.0"
   },
   "devDependencies": {
-    "@thebespokepixel/cordial": "*",
-    "xo": "^0.12.1"
+    "@thebespokepixel/cordial": "*"
   },
   "engines": {
     "node": ">= 4.2 <6.0"
