@@ -1,4 +1,4 @@
-# sgr-composer
+# SGR Composer
 >Compose SGR codes from RGB values, with additional styling (supports 24bit SGR).
 >
 >![Project status][project-badge]
