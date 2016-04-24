@@ -1,10 +1,10 @@
 {
   "name": "sgr-composer",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test --verbose"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/MarkGriffiths/sgr-composer#readme",
   "dependencies": {
-    "color-convert": "^1.0.0"
+    "color-convert": "^1.3.1"
   },
   "devDependencies": {
     "@thebespokepixel/cordial": "*"
@@ -46,5 +46,5 @@
     "semicolon": false,
     "esnext": true
   },
-  "build_number": 0
+  "build_number": 2
 }
