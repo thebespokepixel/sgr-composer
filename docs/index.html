@@ -64,6 +64,16 @@
           
             
             <li><a
+              href="#setstyles"
+              class="">
+              setStyles
+              
+            </a>
+            
+            </li>
+          
+            
+            <li><a
               href="#sgrcomposer"
               class=" toggle-sibling">
               SGRcomposer
@@ -142,6 +152,12 @@
                     #styleArray
                   </a></li>
                   
+                  <li><a
+                    href="#SGRcomposer#sgr"
+                    class="regular pre-open">
+                    #sgr
+                  </a></li>
+                  
                 </ul>
               
               
@@ -214,7 +230,7 @@
       SGRColor  
     </h3>
     
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/f535781dfbf3108a1f991f68d16cfce3eacb4948/src/index.js#L74-L77">src/index.js</a>
+      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/5fd8efca74b939ffeffdb8a1156bcb6cc90e6f53/src/index.js#L74-L77">src/index.js</a>
     
   </div>
   
@@ -277,7 +293,7 @@
       style  
     </h3>
     
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/f535781dfbf3108a1f991f68d16cfce3eacb4948/src/index.js#L93-L101">src/index.js</a>
+      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/5fd8efca74b939ffeffdb8a1156bcb6cc90e6f53/src/index.js#L99-L107">src/index.js</a>
     
   </div>
   
@@ -371,11 +387,78 @@
 
   
   <div class="clearfix">
+    <h3 class="left m0 panel-title" id="setstyles">
+      setStyles  
+    </h3>
+    
+      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/5fd8efca74b939ffeffdb8a1156bcb6cc90e6f53/src/index.js#L130-L148">src/index.js</a>
+    
+  </div>
+  
+
+  <p>Set a style object/</p>
+
+  
+  <div class="pre p1 bg-darken-1 mt0 signature">setStyles(styles: <a href="#style">style</a>, excluded_: <a href="#style">style</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class="py1 quiet mt1 prose-big">Parameters</div>
+    <div class="prose">
+      
+        <div class="space-bottom0">
+          <div>
+            <span class="code bold">styles</span> <code class="quiet">(<a href="#style">style</a>)</code> The style object to set
+
+          </div>
+          
+        </div>
+      
+        <div class="space-bottom0">
+          <div>
+            <span class="code bold">excluded_</span> <code class="quiet">(<a href="#style">style</a>)</code> Styles to exclude.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      
+        
+          <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+
+  
+  <div class="clearfix">
     <h3 class="left m0 panel-title" id="sgrcomposer">
       SGRcomposer  
     </h3>
     
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/f535781dfbf3108a1f991f68d16cfce3eacb4948/src/index.js#L143-L275">src/index.js</a>
+      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/5fd8efca74b939ffeffdb8a1156bcb6cc90e6f53/src/index.js#L154-L291">src/index.js</a>
     
   </div>
   
@@ -983,6 +1066,72 @@
       <div class="py1 quiet mt1 prose-big">Returns</div>
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></code>:
         An array of style keys.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='SGRcomposer#sgr'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>sgr(exclusions)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+
+  
+
+  <p>Render and SGRColor object.</p>
+
+  
+  <div class="pre p1 bg-darken-1 mt0 signature">sgr(exclusions: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>) → <a href="#sgrcolor">SGRColor</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class="py1 quiet mt1 prose-big">Parameters</div>
+    <div class="prose">
+      
+        <div class="space-bottom0">
+          <div>
+            <span class="code bold">exclusions</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code> Styles to exclude from render.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class="py1 quiet mt1 prose-big">Returns</div>
+      <code><a href="#sgrcolor">SGRColor</a></code>:
+        The rendered SGRColor object.
 
       
     

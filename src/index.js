@@ -78,6 +78,12 @@ function parseColor(color_, depth_, bg_) {
 	})()
 }
 
+/**
+ * Parse a style object
+ * @private
+ * @param  {style} styles_ The style object to parse
+ * @return {style} The parsed style.
+ */
 function parseStyles(styles_) {
 	/**
 	 * Style declaration
@@ -116,6 +122,11 @@ function parseStyles(styles_) {
 	}
 }
 
+/**
+ * Set a style object/
+ * @param {style} styles    - The style object to set
+ * @param {style} excluded_ - Styles to exclude.
+ */
 function setStyles(styles, excluded_) {
 	const excluded = (excluded_ === undefined) ? {} : excluded_
 	const sgrIn = []
@@ -258,10 +269,15 @@ export default class SGRcomposer {
 		this._color = color
 	}
 
-	sgr(exclusions_) {
-		const styleSGRtemp = (exclusions_ === undefined) ?
+	/**
+	 * Render and SGRColor object.
+	 * @param  {object} exclusions - Styles to exclude from render.
+	 * @return {SGRColor} The rendered SGRColor object.
+	 */
+	sgr(exclusions) {
+		const styleSGRtemp = (exclusions === undefined) ?
 			this.styleSGR :
-			setStyles(this.styles, parseStyles(exclusions_))
+			setStyles(this.styles, parseStyles(exclusions))
 
 		const inJoin = (this.colorSGR.in !== '' && styleSGRtemp.in !== '') ? ';' : ''
 		const outJoin = (this.colorSGR.out !== '' && styleSGRtemp.out !== '') ? ';' : ''
