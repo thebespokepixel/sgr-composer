@@ -1,17 +1,20 @@
 'use strict'
-/*
- * sgr-converter - Convert RGB values to SGR TTY codes
- * http://github.com/MarkGriffiths/sgr-composer
- */
 
-const assert = require('assert')
-const converter = require('color-convert')
+function _interopDefault(ex) {
+	return (ex && (typeof ex === 'object') && 'default' in ex) ? ex.default : ex
+}
+
+const assert = _interopDefault(require('assert'))
+const converter = _interopDefault(require('color-convert'))
 
 const _SGRparts = {
 	start: '\u001b[',
 	fg: [38, 39],
 	bg: [48, 49],
-	reset: {in: 0, out: ''},
+	reset: {
+		in: 0,
+		out: ''
+	},
 	end: 'm'
 }
 
@@ -44,7 +47,7 @@ function parseColor(color_, depth_, bg_) {
 		})()
 		const mode = {
 			in: (() => {
-				const fgBg = (bg_) ? _SGRparts.bg[0] : _SGRparts.fg[0]
+				const fgBg = bg_ ? _SGRparts.bg[0] : _SGRparts.fg[0]
 				switch (depth_) {
 					case 3:
 						return `${fgBg};2;`
@@ -56,7 +59,7 @@ function parseColor(color_, depth_, bg_) {
 						return ''
 				}
 			})(),
-			out: (bg_) ? _SGRparts.bg[1] : _SGRparts.fg[1]
+			out: bg_ ? _SGRparts.bg[1] : _SGRparts.fg[1]
 		}
 
 		return {
@@ -86,19 +89,19 @@ function parseStyles(styles_) {
 				}
 			})
 			return styles
-		case (typeof styles_ === 'object'):
+		case typeof styles_ === 'object':
 			return Object.assign(styles, styles_)
 		default:
 			return styles
 	}
 }
 
-function setStyles(styles_, excluded_) {
-	const excluded = (excluded_ === undefined) ? {} : excluded_
+function setStyles(styles, excluded_) {
+	const excluded = excluded_ === undefined ? {} : excluded_
 	const sgrIn = []
 	const sgrOut = []
 	Object.keys(_styles).forEach(key_ => {
-		if (styles_[key_] && (!excluded[key_])) {
+		if (styles[key_] && !excluded[key_]) {
 			if (sgrIn.indexOf(_styles[key_][0]) === -1) {
 				sgrIn.push(_styles[key_][0])
 			}
@@ -114,7 +117,7 @@ function setStyles(styles_, excluded_) {
 }
 
 class SGRcomposer {
-	constructor(targetDepth_, styles_) {
+	constructor(targetDepth, styles) {
 		this._depth = (depth_ => {
 			switch (true) {
 				case [3, '16m', 'millions'].indexOf(depth_) !== -1:
@@ -126,9 +129,12 @@ class SGRcomposer {
 				default:
 					return 0
 			}
-		})(targetDepth_)
-		this.colorSGR = {in: '', out: ''}
-		this.style = styles_
+		})(targetDepth)
+		this.colorSGR = {
+			in: '',
+			out: ''
+		}
+		this.style = styles
 	}
 
 	get depth() {
@@ -159,47 +165,46 @@ class SGRcomposer {
 		let styles = ''
 		Object.keys(this.styles).forEach(key_ => {
 			if (this.styles[key_]) {
-				const space = (styles === '') ? '' : ' '
-				styles += (key_ === 'color') ? '' : `${space}${key_}`
+				const space = styles === '' ? '' : ' '
+				styles += key_ === 'color' ? '' : `${space}${key_}`
 			}
 		})
-		return (styles === '') ? null : styles
+		return styles === '' ? undefined : styles
+	}
+
+	set style(styles) {
+		this.styles = parseStyles(styles)
+		this.colorSGR = 'color' in this.styles ? parseColor(this.styles.color, this._depth, this.styles.background) : this.colorSGR
+		this.styleSGR = setStyles(this.styles)
+		this._color = 'color' in this.styles ? this.styles.color : this._color
 	}
 
 	get styleArray() {
 		const styles = []
-		Object.keys(this.styles).forEach(key_ => (this.styles[key_] === true) && styles.push(key_))
+		Object.keys(this.styles).forEach(key_ => this.styles[key_] === true && styles.push(key_))
 		return styles
 	}
 
-	set style(styles_) {
-		this.styles = parseStyles(styles_)
-		this.colorSGR = ('color' in this.styles) ?
-			parseColor(this.styles.color, this._depth, this.styles.background) :
-			this.colorSGR
-		this.styleSGR = setStyles(this.styles)
-		this._color = ('color' in this.styles) ? this.styles.color : this._color
+	set color(color) {
+		this.colorSGR = parseColor(color, this._depth, false)
+		this._color = color
 	}
 
-	set color(color_) {
-		this.colorSGR = parseColor(color_, this._depth, false)
-		this._color = color_
-	}
+	sgr(exclusions) {
+		const styleSGRtemp = exclusions === undefined ? this.styleSGR : setStyles(this.styles, parseStyles(exclusions))
 
-	sgr(exclusions_) {
-		const styleSGRtemp = (exclusions_ === undefined) ?
-			this.styleSGR :
-			setStyles(this.styles, parseStyles(exclusions_))
-
-		const inJoin = (this.colorSGR.in !== '' && styleSGRtemp.in !== '') ? ';' : ''
-		const outJoin = (this.colorSGR.out !== '' && styleSGRtemp.out !== '') ? ';' : ''
+		const inJoin = this.colorSGR.in !== '' && styleSGRtemp.in !== '' ? ';' : ''
+		const outJoin = this.colorSGR.out !== '' && styleSGRtemp.out !== '' ? ';' : ''
 		const output = {
 			in: `${_SGRparts.start}${this.colorSGR.in}${inJoin}${styleSGRtemp.in}${_SGRparts.end}`,
 			out: `${_SGRparts.start}${styleSGRtemp.out}${outJoin}${this.colorSGR.out}${_SGRparts.end}`
 		}
-		Object.defineProperty(output, 'toString', {value: () => output.in})
+		Object.defineProperty(output, 'toString', {
+			value: () => output.in
+		})
 		return output
 	}
 }
 
 module.exports = SGRcomposer
+
