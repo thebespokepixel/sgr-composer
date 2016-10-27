@@ -1,4 +1,3 @@
-'use strict'
 import test from 'ava'
 import SGRcomposer from '..'
 
@@ -71,7 +70,6 @@ test('Normal SGRComposer', t => {
 	}, 'SGRs unmatched.')
 })
 
-
 test('SGRComposer Components', t => {
 	const composer = new SGRcomposer('16m')
 	t.is(composer.depth, 3, 'Color depths unmatched.')
@@ -92,7 +90,7 @@ test('SGRComposer Color', t => {
 	const composer = new SGRcomposer('16m')
 	t.is(composer.depth, 3, 'Color depths unmatched.')
 	composer.color = [0xFF, 0x33, 0x66]
-	t.deepEqual(composer.color, [255,51,102])
+	t.deepEqual(composer.color, [255, 51, 102])
 })
 
 test('SGRComposer Style', t => {
@@ -108,7 +106,7 @@ test('SGRComposer Style Array', t => {
 	t.is(composer.depth, 3, 'Color depths unmatched.')
 	composer.color = [0xFF, 0x33, 0x66]
 	composer.style = ['bold', 'italic']
-	t.deepEqual(composer.styleArray, ['bold','italic'])
+	t.deepEqual(composer.styleArray, ['bold', 'italic'])
 })
 
 test('24 bit SGRComposer II as String', t => {
