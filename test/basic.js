@@ -70,3 +70,52 @@ test('Normal SGRComposer', t => {
 		out: '\u001b[m'
 	}, 'SGRs unmatched.')
 })
+
+
+test('SGRComposer Components', t => {
+	const composer = new SGRcomposer('16m')
+	t.is(composer.depth, 3, 'Color depths unmatched.')
+	composer.color = [0xFF, 0x33, 0x66]
+	t.is(composer.red, 0xFF)
+	t.is(composer.green, 0x33)
+	t.is(composer.blue, 0x66)
+})
+
+test('SGRComposer Hex', t => {
+	const composer = new SGRcomposer('16m')
+	t.is(composer.depth, 3, 'Color depths unmatched.')
+	composer.color = [0xFF, 0x33, 0x66]
+	t.is(composer.hex, 'FF3366')
+})
+
+test('SGRComposer Color', t => {
+	const composer = new SGRcomposer('16m')
+	t.is(composer.depth, 3, 'Color depths unmatched.')
+	composer.color = [0xFF, 0x33, 0x66]
+	t.deepEqual(composer.color, [255,51,102])
+})
+
+test('SGRComposer Style', t => {
+	const composer = new SGRcomposer('16m')
+	t.is(composer.depth, 3, 'Color depths unmatched.')
+	composer.color = [0xFF, 0x33, 0x66]
+	composer.style = ['bold', 'italic']
+	t.is(composer.style, 'bold italic')
+})
+
+test('SGRComposer Style Array', t => {
+	const composer = new SGRcomposer('16m')
+	t.is(composer.depth, 3, 'Color depths unmatched.')
+	composer.color = [0xFF, 0x33, 0x66]
+	composer.style = ['bold', 'italic']
+	t.deepEqual(composer.styleArray, ['bold','italic'])
+})
+
+test('24 bit SGRComposer II as String', t => {
+	const composer = new SGRcomposer('millions', {
+		color: [0xFF, 0x33, 0x66],
+		invert: true
+	})
+	t.is(composer.depth, 3, 'Color depths unmatched.')
+	t.is(composer.sgr().toString(), '\u001b[38;2;255;51;102;7m')
+})
