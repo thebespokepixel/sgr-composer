@@ -4,6 +4,7 @@ branches:
   - develop
   - /^greenkeeper-.*$/
 language: node_js
+node_js:
   - stable
   - 6
   - 5
