@@ -1,6 +1,6 @@
 {
   "name": "sgr-composer",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "files": [
@@ -122,6 +122,6 @@
       ]
     ]
   },
-  "buildNumber": 2,
+  "buildNumber": 0,
   "jsnext:main": "index-es.js"
 }
