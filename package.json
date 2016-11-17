@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@thebespokepixel/cordial": "^0.17.11",
-    "ava": "^0.16.0",
+    "ava": "^0.17.0",
     "babel-plugin-external-helpers": "^6.8.0",
     "documentation": "^4.0.0-beta11",
     "documentation-theme-bespoke": "^0.3.4",
