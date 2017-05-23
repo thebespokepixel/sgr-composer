@@ -1,5 +1,7 @@
 # SGR Composer
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MarkGriffiths/sgr-composer.svg)](https://greenkeeper.io/)
+
 > Compose SGR codes from RGB values, with additional styling (supports 24bit SGR).
 
 ##### Status
