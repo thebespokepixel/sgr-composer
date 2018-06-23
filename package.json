@@ -4,16 +4,15 @@
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "files": [
-    "index-es.js",
-    "index.js"
+    "index.js",
+    "index.mjs"
   ],
   "scripts": {
     "test": "xo && nyc ava",
     "doc-serve": "documentation serve --watch --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
     "doc-build": "documentation build --format html --output docs --theme node_modules/documentation-theme-bespoke --github --config src/docs/documentation.yml --name $npm_package_name  --project-version $npm_package_version src/index.js",
     "readme": "compile-readme -u src/docs/example.md src/docs/readme.md > readme.md",
-    "coverage": "nyc ava && nyc report --reporter=lcov --report-dir test/coverage; open test/coverage/lcov-report/index.html",
-    "clean": "gulp clean"
+    "coverage": "nyc ava && nyc report --reporter=lcov --report-dir test/coverage; open test/coverage/lcov-report/index.html"
   },
   "repository": {
     "type": "git",
@@ -37,19 +36,21 @@
   },
   "homepage": "https://github.com/MarkGriffiths/sgr-composer#readme",
   "dependencies": {
-    "color-convert": "^1.6.0"
+    "color-convert": "^1.9.2"
   },
   "devDependencies": {
-    "@thebespokepixel/cordial": "^0.17.11",
-    "ava": "^0.17.0",
-    "babel-plugin-external-helpers": "^6.8.0",
-    "documentation": "^4.0.0-beta15",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "ava": "^0.25.0",
+    "documentation": "^8.0.0",
     "documentation-theme-bespoke": "^0.3.5",
-    "codeclimate-test-reporter": "^0.4.0",
-    "greenkeeper-postpublish": "^1.0.1",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "nyc": "^10.0.0",
-    "xo": "^0.17.0"
+    "gulp": "^4.0.0",
+    "gulp-better-rollup": "^3.2.1",
+    "gulp-rename": "^1.3.0",
+    "gulp-strip-comments": "^2.5.2",
+    "nyc": "^12.0.2",
+    "rollup-plugin-babel": "^4.0.0-beta.5",
+    "xo": "^0.21.1"
   },
   "engines": {
     "node": ">=4.0 <9.0"
@@ -121,7 +122,5 @@
         "david"
       ]
     ]
-  },
-  "buildNumber": 0,
-  "jsnext:main": "index-es.js"
+  }
 }
