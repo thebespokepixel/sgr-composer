@@ -2,7 +2,7 @@ import assert from 'assert';
 import converter from 'color-convert';
 
 const _SGRparts = {
-  start: '\u001b[',
+  start: '\u001B[',
   fg: [38, 39],
   bg: [48, 49],
   reset: {

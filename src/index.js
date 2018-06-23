@@ -6,7 +6,7 @@ import assert from 'assert'
 import converter from 'color-convert'
 
 const _SGRparts = {
-	start: '\u001b[',
+	start: '\u001B[',
 	fg: [38, 39],
 	bg: [48, 49],
 	reset: {in: 0, out: ''},
@@ -126,6 +126,7 @@ function parseStyles(styles_) {
  * Set a style object/
  * @param {style} styles    - The style object to set
  * @param {style} excluded_ - Styles to exclude.
+ * @returns {Object} - In and Out SGR parts
  */
 function setStyles(styles, excluded_) {
 	const excluded = (excluded_ === undefined) ? {} : excluded_
