@@ -1,9 +1,5 @@
-'use strict';
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var assert = _interopDefault(require('assert'));
-var converter = _interopDefault(require('color-convert'));
+import assert from 'assert';
+import converter from 'color-convert';
 
 const _SGRparts = {
   start: '\u001B[',
@@ -236,4 +232,4 @@ class SGRcomposer {
 
 }
 
-module.exports = SGRcomposer;
+export default SGRcomposer;
