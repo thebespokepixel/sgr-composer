@@ -53,7 +53,7 @@
     "xo": "^0.21.1"
   },
   "engines": {
-    "node": ">=4.0 <9.0"
+    "node": ">=8.0"
   },
   "ava": {
     "files": [
@@ -65,8 +65,8 @@
     "semicolon": false,
     "esnext": true,
     "ignores": [
-      "index*.js",
-      "lib/**",
+      "index.js",
+      "index.mjs",
       "docs/**"
     ]
   },
