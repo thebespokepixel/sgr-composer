@@ -34,6 +34,7 @@ function parseColor(color_, depth_, bg_) {
 	if (['reset', 'normal'].indexOf(color_) !== -1) {
 		return _SGRparts.reset
 	}
+
 	assert(Array.isArray(color_) && color_.length === 3, `provided RGB value needs to be an array, i.e [R, G, B], not ${color_}.`)
 	return (() => {
 		const color = (() => {
@@ -137,6 +138,7 @@ function setStyles(styles, excluded_) {
 			if (sgrIn.indexOf(_styles[key_][0]) === -1) {
 				sgrIn.push(_styles[key_][0])
 			}
+
 			if (sgrOut.indexOf(_styles[key_][1]) === -1) {
 				sgrOut.unshift(_styles[key_][1])
 			}

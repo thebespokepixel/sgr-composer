@@ -18,7 +18,6 @@ const _styles = {
   underline: [4, 24],
   blink: [5, 25],
   invert: [7, 27]
-
 };
 
 function parseColor(color_, depth_, bg_) {
@@ -63,7 +62,6 @@ function parseColor(color_, depth_, bg_) {
         }
       })(),
       out: bg_ ? _SGRparts.bg[1] : _SGRparts.fg[1]
-
     };
     return {
       in: `${mode.in}${color}`,
@@ -71,7 +69,6 @@ function parseColor(color_, depth_, bg_) {
     };
   })();
 }
-
 
 function parseStyles(styles_) {
   const styles = {
@@ -104,7 +101,6 @@ function parseStyles(styles_) {
   }
 }
 
-
 function setStyles(styles, excluded_) {
   const excluded = excluded_ === undefined ? {} : excluded_;
   const sgrIn = [];
@@ -125,7 +121,6 @@ function setStyles(styles, excluded_) {
     out: sgrOut.join(';')
   };
 }
-
 
 class SGRcomposer {
   constructor(targetDepth, styles) {
@@ -152,36 +147,29 @@ class SGRcomposer {
     this.style = styles;
   }
 
-
   get depth() {
     return this._depth;
   }
-
 
   get color() {
     return this._color;
   }
 
-
   get hex() {
     return converter.rgb.hex(this._color);
   }
-
 
   get red() {
     return this._color[0];
   }
 
-
   get green() {
     return this._color[1];
   }
 
-
   get blue() {
     return this._color[2];
   }
-
 
   get style() {
     let styles = '';
@@ -194,7 +182,6 @@ class SGRcomposer {
     return styles === '' ? undefined : styles;
   }
 
-
   set style(styles) {
     this.styles = parseStyles(styles);
     this.colorSGR = 'color' in this.styles ? parseColor(this.styles.color, this._depth, this.styles.background) : this.colorSGR;
@@ -202,19 +189,16 @@ class SGRcomposer {
     this._color = 'color' in this.styles ? this.styles.color : this._color;
   }
 
-
   get styleArray() {
     const styles = [];
     Object.keys(this.styles).forEach(key_ => this.styles[key_] === true && styles.push(key_));
     return styles;
   }
 
-
   set color(color) {
     this.colorSGR = parseColor(color, this._depth, false);
     this._color = color;
   }
-
 
   sgr(exclusions) {
     const styleSGRtemp = exclusions === undefined ? this.styleSGR : setStyles(this.styles, parseStyles(exclusions));
