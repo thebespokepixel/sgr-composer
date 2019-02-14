@@ -2,558 +2,573 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>sgr-composer 0.4.4 | Documentation</title>
+  <title>sgr-composer 0.5.1 | Documentation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="assets/css/ace.min.css" rel="stylesheet">
   <link href="assets/fonts/TypoPRO-Hack/TypoPRO-Hack.css" type="text/css" rel="stylesheet" />
   <link href="assets/fonts/TypoPRO-FiraSans/TypoPRO-FiraSans.css" type="text/css" rel="stylesheet" />
   <link href="assets/css/style.css" type="text/css" rel="stylesheet" />
+  <meta name='description' content='Compose SGR codes from RGB values'>
 </head>
-<body class="m0 documentation">
+<body class='documentation m0'>
   <div class="flex">
-    <div class="flex-column fixed top-0 bottom-0 px2 pt2 max-height-100 sidebar">
-      <h3 class="m0 no-anchor">sgr-composer</h3>
-      <div class="mb1"><code>v0.4.4</code></div>
-      <input
-        placeholder="Filter"
-        id="filter-input"
-        class="col12 block input"
-        type="text" />
-      <div id="toc">
-        <ul class="list-reset h5 py1-ul">
-
-
-            <li><a
-              href="#usage"
-              class="h5 bold black caps">
-              Usage
-
-            </a>
-
-            </li>
-
-
-            <li><a
-              href="#api"
-              class="h5 bold black caps">
-              API
-
-            </a>
-
-            </li>
-
-
-            <li><a
-              href="#sgrcolor"
-              class="">
-              SGRColor
-
-            </a>
-
-            </li>
-
-
-            <li><a
-              href="#style"
-              class="">
-              style
-
-            </a>
-
-            </li>
-
-
-            <li><a
-              href="#setstyles"
-              class="">
-              setStyles
-
-            </a>
-
-            </li>
-
-
-            <li><a
-              href="#sgrcomposer"
-              class=" toggle-sibling">
-              SGRcomposer
-              <span class="icon">▸</span>
-            </a>
-
-            <div class="toggle-target display-none">
-
-
-                <ul class="list-reset py1-ul pl1">
-                  <li class="h5"><span>Instance members</span></li>
-
-                  <li><a
-                    href="#SGRcomposer#constructor"
-                    class="regular pre-open">
-                    #constructor
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#depth"
-                    class="regular pre-open">
-                    #depth
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#color"
-                    class="regular pre-open">
-                    #color
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#color"
-                    class="regular pre-open">
-                    #color
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#hex"
-                    class="regular pre-open">
-                    #hex
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#red"
-                    class="regular pre-open">
-                    #red
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#green"
-                    class="regular pre-open">
-                    #green
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#blue"
-                    class="regular pre-open">
-                    #blue
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#style"
-                    class="regular pre-open">
-                    #style
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#style"
-                    class="regular pre-open">
-                    #style
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#styleArray"
-                    class="regular pre-open">
-                    #styleArray
-                  </a></li>
-
-                  <li><a
-                    href="#SGRcomposer#sgr"
-                    class="regular pre-open">
-                    #sgr
-                  </a></li>
-
-                </ul>
-
-
-            </div>
-
-            </li>
-
-        </ul>
-      </div>
-      <div class="badges"><p><a href="https://github.com/MarkGriffiths/sgr-composer" title="Github"><img src="https://img.shields.io/badge/github-source-4E73B6.svg?style=flat" alt="Github"></a> <a href="https://travis-ci.org/MarkGriffiths/sgr-composer" title="Travis"><img src="https://img.shields.io/travis/MarkGriffiths/sgr-composer.svg?branch=master&#x26;style=flat" alt="Travis"></a> <br>
-</p>
-
-<p><a href="https://codeclimate.com/github/MarkGriffiths/sgr-composer" title="Code-climate"><img src="https://codeclimate.com/github/MarkGriffiths/sgr-composer/badges/gpa.svg?style=flat" alt="Code-climate"></a><br><a href="https://codeclimate.com/github/MarkGriffiths/sgr-composer/coverage" title="Coverage"><img src="https://codeclimate.com/github/MarkGriffiths/sgr-composer/badges/coverage.svg?style=flat" alt="Coverage"></a> <br>
-</p>
-
-<p><a href="https://david-dm.org/MarkGriffiths/sgr-composer/master" title="David"><img src="https://img.shields.io/david/MarkGriffiths/sgr-composer.svg?branch=master&#x26;style=flat" alt="David"></a> <br>
-</p>
-
-<br>
-
-</div>
-      <div class="mt1 h6 quiet">
-        <a href="http://documentation.js.org/reading-documentation.html">Need help reading this?</a>
+    <div id='split-left' class='overflow-auto fs0 height-100 sidebar'>
+      <div class='py1 px2'>
+        <h3 class="m0 no-anchor">sgr-composer</h3>
+        <div class="mb1"><code>0.5.1</code></div>
+        <input
+          placeholder="Filter"
+          id="filter-input"
+          class="col12 block input"
+          type="text" />
+        <div id="toc">
+          <ul class="list-reset h5 py1-ul">
+            
+              
+              <li><a
+                href="#usage"
+                class="h5 bold black caps">
+                Usage
+                
+              </a>
+              
+              </li>
+            
+              
+              <li><a
+                href="#api"
+                class="h5 bold black caps">
+                API
+                
+              </a>
+              
+              </li>
+            
+              
+              <li><a
+                href="#sgrcolor"
+                class="">
+                SGRColor
+                
+              </a>
+              
+              </li>
+            
+              
+              <li><a
+                href="#style"
+                class="">
+                style
+                
+              </a>
+              
+              </li>
+            
+              
+              <li><a
+                href="#setstyles"
+                class="">
+                setStyles
+                
+              </a>
+              
+              </li>
+            
+              
+              <li><a
+                href="#sgrcomposer"
+                class=" toggle-sibling">
+                SGRcomposer
+                <span class="icon">▸</span>
+              </a>
+              
+              <div class="toggle-target display-none">
+                
+                
+                  <ul class="list-reset py1-ul pl1">
+                    <li class="h5"><span>Instance members</span></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#depth"
+                      class="regular pre-open">
+                      #depth
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#color"
+                      class="regular pre-open">
+                      #color
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#color"
+                      class="regular pre-open">
+                      #color
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#hex"
+                      class="regular pre-open">
+                      #hex
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#red"
+                      class="regular pre-open">
+                      #red
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#green"
+                      class="regular pre-open">
+                      #green
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#blue"
+                      class="regular pre-open">
+                      #blue
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#style"
+                      class="regular pre-open">
+                      #style
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#style"
+                      class="regular pre-open">
+                      #style
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#styleArray"
+                      class="regular pre-open">
+                      #styleArray
+                    </a></li>
+                    
+                    <li><a
+                      href="#SGRcomposer#sgr"
+                      class="regular pre-open">
+                      #sgr
+                    </a></li>
+                    
+                  </ul>
+                
+                
+              </div>
+              
+              </li>
+            
+          </ul>
+        </div>
+        <div class="badges"><p><p><a href="https://github.com/MarkGriffiths/sgr-composer" title="Github"><img src="https://img.shields.io/badge/github-source-4E73B6.svg?style=flat" alt="Github"></a> <a href="https://travis-ci.org/MarkGriffiths/sgr-composer" title="Travis"><img src="https://img.shields.io/travis/MarkGriffiths/sgr-composer.svg?branch=master&#x26;style=flat&#x26;logo=travis" alt="Travis"></a> <br>
+</p> <p><a href="https://codeclimate.com/github/MarkGriffiths/sgr-composer/maintainability" title="Code-climate"><img src="https://api.codeclimate.com/v1/badges/c6c32afafc88b0d53e7d/maintainability?style=flat" alt="Code-climate"></a> <a href="https://codeclimate.com/github/MarkGriffiths/sgr-composer/test_coverage" title="Coverage"><img src="https://api.codeclimate.com/v1/badges/c6c32afafc88b0d53e7d/test_coverage?style=flat" alt="Coverage"></a> <br>
+</p> <p><a href="https://david-dm.org/MarkGriffiths/sgr-composer/master" title="David"><img src="https://img.shields.io/david/MarkGriffiths/sgr-composer.svg?branch=master&#x26;style=flat" alt="David"></a> <br>
+</p> <br>
+</p></div>
+        <div class="mt1 h6 quiet">
+          <a href="http://documentation.js.org/reading-documentation.html">Need help reading this?</a>
+        </div>
       </div>
     </div>
-    <div class="flex-column px2 sidespace">
+    <!-- <div class="flex-column px2 sidespace">
       <h3 class="m0 no-anchor">sgr-composer</h3>
-    </div>
-    <div class="flex-auto px2 pt1">
-
-
-          <div class="keyline-top-not py1"><section class="py0 px2 clearfix note">
-	<h3 id="usage" class="m0">
+    </div> -->
+    <div id='split-right' class='relative overflow-auto height-viewport-100'>
+      
+        
+          <div class="keyline-top-not py1"><section class="py0 px3 clearfix note">
+	<h2 id="usage" class="m0">
 		Usage
-	</h3>
+	</h2>
+	
+		
 
-
+	
+	
 		<h4>Installation</h4>
 <pre class='hljs'>npm install --save sgr-composer</pre>
 <h4>Examples</h4>
 <pre class='hljs'><span class="hljs-keyword">import</span> SGRcomposer <span class="hljs-keyword">from</span> <span class="hljs-string">'sgr-composer'</span></pre>
 
-
+	
 </section>
 </div>
-
-
-
-          <div class="keyline-top-not py1"><section class="py0 px2 clearfix note">
-	<h3 id="api" class="m0">
+        
+      
+        
+          <div class="keyline-top-not py1"><section class="py0 px3 clearfix note">
+	<h2 id="api" class="m0">
 		API
-	</h3>
+	</h2>
+	
+		
 
-
-
-
-
+	
+	
 </section>
 </div>
+        
+      
+        
+          <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
-
-          <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
-
-
-  <div class="clearfix">
-    <h3 class="left m0 panel-title" id="sgrcolor">
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L52-L67'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+    <h3 class='left m0 panel-title' id='sgrcolor'>
       SGRColor
+      
     </h3>
-
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/c93c76b0421693ece8494529b26a9ed6e8c415be/src/index.js#L74-L77">src/index.js</a>
-
+    
   </div>
-
+  
 
   <p>A representation of an in/out SGR code pair.</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>SGRColor</div>
+  
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>
+    </p>
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
-
-
-
-
-
-
-
-
-    <div class="py1 quiet mt1 prose-big">Properties</div>
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
     <div>
-
-        <div class="space-bottom0">
-          <span class="code bold">in</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>in</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
           : The opening SGR color code.
 
-
+          
         </div>
-
-        <div class="space-bottom0">
-          <span class="code bold">out</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>out</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
           : The closing SGR code.
 
-
+          
         </div>
-
+      
     </div>
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
+  
 </section>
 
+        
+      
+        
+          <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
-
-          <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
-
-
-  <div class="clearfix">
-    <h3 class="left m0 panel-title" id="style">
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L100-L108'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+    <h3 class='left m0 panel-title' id='style'>
       style
+      
     </h3>
-
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/c93c76b0421693ece8494529b26a9ed6e8c415be/src/index.js#L99-L107">src/index.js</a>
-
+    
   </div>
-
+  
 
   <p>Style declaration</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>style</div>
+  
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>
+    </p>
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
-
-
-
-
-
-
-
-
-    <div class="py1 quiet mt1 prose-big">Properties</div>
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
     <div>
-
-        <div class="space-bottom0">
-          <span class="code bold">background</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>background</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
           : Set background color
 
-
+          
         </div>
-
-        <div class="space-bottom0">
-          <span class="code bold">bold</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>bold</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
           : Set bold
 
-
+          
         </div>
-
-        <div class="space-bottom0">
-          <span class="code bold">dim</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>dim</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
           : Set dim mode
 
-
+          
         </div>
-
-        <div class="space-bottom0">
-          <span class="code bold">italic</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>italic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
           : Set italics
 
-
+          
         </div>
-
-        <div class="space-bottom0">
-          <span class="code bold">underline</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>underline</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
           : Set underline
 
-
+          
         </div>
-
-        <div class="space-bottom0">
-          <span class="code bold">blink</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>blink</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
           : Set blink
 
-
+          
         </div>
-
-        <div class="space-bottom0">
-          <span class="code bold">invert</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>invert</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
           : Set inverted video
 
-
+          
         </div>
-
+      
     </div>
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
+  
 </section>
 
+        
+      
+        
+          <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
-
-          <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
-
-
-  <div class="clearfix">
-    <h3 class="left m0 panel-title" id="setstyles">
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L132-L151'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+    <h3 class='left m0 panel-title' id='setstyles'>
       setStyles
+      
+      <span> → <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>
+      
     </h3>
-
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/c93c76b0421693ece8494529b26a9ed6e8c415be/src/index.js#L130-L148">src/index.js</a>
-
+    
   </div>
-
+  
 
   <p>Set a style object/</p>
 
 
-  <div class="pre p1 bg-darken-1 mt0 signature">setStyles(styles: <a href="#style">style</a>, excluded_: <a href="#style">style</a>)</div>
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>setStyles(styles: <a href="#style">style</a>, excluded_: <a href="#style">style</a>) → <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
-
-
-
-
-
-
-
-
-    <div class="py1 quiet mt1 prose-big">Parameters</div>
-    <div class="prose">
-
-        <div class="space-bottom0">
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
           <div>
-            <span class="code bold">styles</span> <code class="quiet">(<a href="#style">style</a>)</code> The style object to set
+            <span class='code bold'>styles</span> <code class='quiet'>(<a href="#style">style</a>)</code>
+      The style object to set
 
           </div>
-
+          
         </div>
-
-        <div class="space-bottom0">
+      
+        <div class='space-bottom0'>
           <div>
-            <span class="code bold">excluded_</span> <code class="quiet">(<a href="#style">style</a>)</code> Styles to exclude.
+            <span class='code bold'>excluded_</span> <code class='quiet'>(<a href="#style">style</a>)</code>
+      Styles to exclude.
 
           </div>
-
+          
         </div>
-
+      
     </div>
+  
 
+  
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        In and Out SGR parts
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
+  
 </section>
 
+        
+      
+        
+          <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
-
-          <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
-
-
-  <div class="clearfix">
-    <h3 class="left m0 panel-title" id="sgrcomposer">
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L157-L294'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+    <h3 class='left m0 panel-title' id='sgrcomposer'>
       SGRcomposer
+      
     </h3>
-
-      <a class="pl3 pr1 right rounded github" href="https://github.com/MarkGriffiths/sgr-composer/blob/c93c76b0421693ece8494529b26a9ed6e8c415be/src/index.js#L154-L291">src/index.js</a>
-
+    
   </div>
-
+  
 
   <p>A Class for composing various SGR codes.</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>new SGRcomposer(targetDepth: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), styles: <a href="#style">style</a>)</div>
+  
+  
+    <p>
+      Type:
+      <a href="#sgrcomposer">SGRcomposer</a>
+    </p>
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>targetDepth</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>))</code>
+      The target color depth.
 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>styles</span> <code class='quiet'>(<a href="#style">style</a>)</code>
+      Additional SGR style codes.
 
+          </div>
+          
+        </div>
+      
+    </div>
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
-
-
-
-    <div class="py1 quiet mt1 prose-big">Instance Members</div>
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
-
-    <div class='border-bottom' id='SGRcomposer#constructor'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>constructor(targetDepth, styles)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
-
-
-
-  <p>A Class for composing various SGR codes.</p>
-
-
-  <div class="pre p1 bg-darken-1 mt0 signature">constructor(targetDepth: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), styles: <a href="#style">style</a>)</div>
-
-
-
-
-
-
-
-
-
-
-    <div class="py1 quiet mt1 prose-big">Parameters</div>
-    <div class="prose">
-
-        <div class="space-bottom0">
-          <div>
-            <span class="code bold">targetDepth</span> <code class="quiet">((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>))</code> The target color depth.
-
-          </div>
-
-        </div>
-
-        <div class="space-bottom0">
-          <div>
-            <span class="code bold">styles</span> <code class="quiet">(<a href="#style">style</a>)</code> Additional SGR style codes.
-
-          </div>
-
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
-
-      </div>
-    </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#depth'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -562,49 +577,63 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L184-L186'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Get the current color depth.</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>depth</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
-
-
-      <div class="py1 quiet mt1 prose-big">Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         0: no color, 1: 16 colors, 2: 256 colors, 3: 16m colors
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#color'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -613,49 +642,63 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L192-L194'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Get the raw RGB color as an array.</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>color</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
-
-
-      <div class="py1 quiet mt1 prose-big">Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></code>:
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>></code>:
         An array of RGB elements
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#color'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -664,54 +707,69 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L270-L273'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Set the current color</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>color</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
-
-
-
-
-
-
-
-    <div class="py1 quiet mt1 prose-big">Parameters</div>
-    <div class="prose">
-
-        <div class="space-bottom0">
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
           <div>
-            <span class="code bold">color</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>)</code> RGB as an array.
+            <span class='code bold'>color</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>)</code>
+      RGB as an array.
 
           </div>
-
+          
         </div>
-
+      
     </div>
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#hex'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -720,49 +778,63 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L200-L202'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Get the raw color as a hex string.</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>hex</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
-
-
-      <div class="py1 quiet mt1 prose-big">Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         Color as hex string: #RRGGBB
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#red'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -771,52 +843,64 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L208-L210'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Get the red component.</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>red</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
+  
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Red component 
+[0-255]
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-      <div class="py1 quiet mt1 prose-big">Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        Red component
-[
-0-255
-]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#green'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -825,52 +909,64 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L216-L218'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Get the green component.</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>green</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
+  
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Green component 
+[0-255]
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-      <div class="py1 quiet mt1 prose-big">Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        Green component
-[
-0-255
-]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#blue'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -879,52 +975,64 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L224-L226'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Get the blue component.</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>blue</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
+  
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Blue component 
+[0-255]
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-      <div class="py1 quiet mt1 prose-big">Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        Blue component
-[
-0-255
-]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#style'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -933,49 +1041,63 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L232-L241'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Get the current style object</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>style</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
-
-
-      <div class="py1 quiet mt1 prose-big">Returns</div>
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="#style">style</a></code>:
         The currently set styles
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#style'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -984,54 +1106,69 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L247-L254'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Set the current style</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>style</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
-
-
-
-
-
-
-
-    <div class="py1 quiet mt1 prose-big">Parameters</div>
-    <div class="prose">
-
-        <div class="space-bottom0">
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
           <div>
-            <span class="code bold">styles</span> <code class="quiet">((<a href="#style">style</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>))</code> The desired styles as an object or array of keys.
+            <span class='code bold'>styles</span> <code class='quiet'>((<a href="#style">style</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>))</code>
+      The desired styles as an object or array of keys.
 
           </div>
-
+          
         </div>
-
+      
     </div>
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#styleArray'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -1040,49 +1177,63 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L260-L264'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Get the current style as an array of keys.</p>
 
 
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>styleArray</div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
-
-
-      <div class="py1 quiet mt1 prose-big">Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></code>:
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></code>:
         An array of style keys.
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
     <div class='border-bottom' id='SGRcomposer#sgr'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -1091,76 +1242,90 @@
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
-        <section class="py2 px3 mb2 clearfix bg-white rounded minishadow">
+        <section class='p2 pl3 mb2 ml2 mr2 clearfix bg-white rounded minishadow'>
 
-
+  
+  <div class='clearfix'>
+    
+      <a class='pl3 pr1 right rounded github' href='https://MarkGriffiths@github.com/MarkGriffiths/sgr-composer/blob/f2196fb3bb4f3d593e03cc0ef7eec1ccb7596b54/src/index.js#L280-L293'>
+      <span>src/index.js</span>
+      </a>
+    
+    
+  </div>
+  
 
   <p>Render and SGRColor object.</p>
 
 
-  <div class="pre p1 bg-darken-1 mt0 signature">sgr(exclusions: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>) → <a href="#sgrcolor">SGRColor</a></div>
+  
+    <div class='pre p1 bg-darken-1 mt0 rounded signature'>sgr(exclusions: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>) → <a href="#sgrcolor">SGRColor</a></div>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
 
-
-
-
-
-
-
-
-
-    <div class="py1 quiet mt1 prose-big">Parameters</div>
-    <div class="prose">
-
-        <div class="space-bottom0">
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
           <div>
-            <span class="code bold">exclusions</span> <code class="quiet">(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code> Styles to exclude from render.
+            <span class='code bold'>exclusions</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+      Styles to exclude from render.
 
           </div>
-
+          
         </div>
-
+      
     </div>
+  
 
+  
 
-
-
-
-
-      <div class="py1 quiet mt1 prose-big">Returns</div>
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="#sgrcolor">SGRColor</a></code>:
         The rendered SGRColor object.
 
+      
+    
+  
 
+  
 
+  
 
+  
 
+  
 
-
-
-
-
-
-
-
-
+  
 </section>
 
       </div>
     </div>
-
+  
 </div>
 
+  
 
-
-
+  
 </section>
 
-
-
+        
+      
     </div>
   </div>
   <script src="assets/js/anchor.min.js"></script>
+  <script src="assets/js/split.min.js"></script>
   <script src="assets/js/site.js"></script>
 </body>
 </html>
