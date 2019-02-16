@@ -1,6 +1,6 @@
 {
   "name": "sgr-composer",
-  "version": "0.5.3",
+  "version": "1.0.0",
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "files": [
@@ -78,10 +78,6 @@
     "name": "sgr-composer",
     "codeclimate": "c6c32afafc88b0d53e7d",
     "providers": {
-      "status": {
-        "text": "beta",
-        "color": "blue"
-      },
       "aux1": {
         "title": "github",
         "text": "source",
@@ -92,7 +88,6 @@
     "readme": {
       "Status": [
         [
-          "status",
           "npm",
           "travis",
           "david"

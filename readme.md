@@ -4,7 +4,7 @@
 
 ##### Status
 
-![Status](https://img.shields.io/badge/status-beta-blue.svg?style=flat) [![npm](https://img.shields.io/npm/v/sgr-composer.svg?style=flat&logo=npm)](https://www.npmjs.com/package/sgr-composer "npm") [![Travis](https://img.shields.io/travis/MarkGriffiths/sgr-composer.svg?branch=master&style=flat&logo=travis)](https://travis-ci.org/MarkGriffiths/sgr-composer "Travis") [![David](https://img.shields.io/david/MarkGriffiths/sgr-composer.svg?branch=master&style=flat)](https://david-dm.org/MarkGriffiths/sgr-composer/master "David")  
+[![npm](https://img.shields.io/npm/v/sgr-composer.svg?style=flat&logo=npm)](https://www.npmjs.com/package/sgr-composer "npm") [![Travis](https://img.shields.io/travis/MarkGriffiths/sgr-composer.svg?branch=master&style=flat&logo=travis)](https://travis-ci.org/MarkGriffiths/sgr-composer "Travis") [![David](https://img.shields.io/david/MarkGriffiths/sgr-composer.svg?branch=master&style=flat)](https://david-dm.org/MarkGriffiths/sgr-composer/master "David")  
  [![Code-climate](https://api.codeclimate.com/v1/badges/c6c32afafc88b0d53e7d/maintainability?style=flat)](https://codeclimate.com/github/MarkGriffiths/sgr-composer/maintainability "Code-climate") [![Coverage](https://api.codeclimate.com/v1/badges/c6c32afafc88b0d53e7d/test_coverage?style=flat)](https://codeclimate.com/github/MarkGriffiths/sgr-composer/test_coverage "Coverage") [![Snyk](https://snyk.io/test/github/MarkGriffiths/sgr-composer/badge.svg?style=flat)](https://snyk.io/test/github/MarkGriffiths/sgr-composer "Snyk")   
 
 ##### Developer
