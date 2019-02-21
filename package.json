@@ -57,12 +57,6 @@
   "engines": {
     "node": ">=8.0"
   },
-  "ava": {
-    "files": [
-      "test/*.js"
-    ],
-    "verbose": true
-  },
   "xo": {
     "semicolon": false,
     "esnext": true,
