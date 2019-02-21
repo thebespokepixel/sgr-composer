@@ -1,6 +1,6 @@
 {
   "name": "sgr-composer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "files": [
@@ -56,12 +56,6 @@
   },
   "engines": {
     "node": ">=8.0"
-  },
-  "ava": {
-    "files": [
-      "test/*.js"
-    ],
-    "verbose": true
   },
   "xo": {
     "semicolon": false,
