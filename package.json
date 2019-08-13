@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarkGriffiths/sgr-composer.git"
+    "url": "git+https://github.com/thebespokepixel/sgr-composer.git"
   },
   "keywords": [
     "CLI",
@@ -32,25 +32,25 @@
   "author": "Mark Griffiths <mark@thebespokepixel.com> (http://thebespokepixel.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MarkGriffiths/sgr-composer/issues"
+    "url": "https://github.com/thebespokepixel/sgr-composer/issues"
   },
-  "homepage": "https://github.com/MarkGriffiths/sgr-composer#readme",
+  "homepage": "https://github.com/thebespokepixel/sgr-composer#readme",
   "dependencies": {
     "color-convert": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "ava": "^2.1.0",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "ava": "^2.2.0",
     "documentation-theme-bespoke": "^0.5.6",
     "gulp": "^4.0.2",
     "gulp-better-rollup": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "nyc": "^14.1.1",
-    "rollup": "^1.15.3",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^10.0.0",
-    "rollup-plugin-node-resolve": "^5.0.2",
+    "rollup": "^1.19.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "xo": "^0.24.0"
   },
   "engines": {
@@ -66,16 +66,16 @@
     ]
   },
   "badges": {
-    "github": "MarkGriffiths",
+    "github": "thebespokepixel",
     "npm": "thebespokepixel",
     "name": "sgr-composer",
-    "codeclimate": "c6c32afafc88b0d53e7d",
+    "codeclimate": "7a4d648e47d78e90f3a4",
     "providers": {
       "aux1": {
         "title": "github",
         "text": "source",
         "color": "4E73B6",
-        "link": "https://github.com/MarkGriffiths/sgr-composer"
+        "link": "https://github.com/thebespokepixel/sgr-composer"
       }
     },
     "readme": {
@@ -97,8 +97,7 @@
         "rollup"
       ],
       "Help": [
-        "inch",
-        "gitter"
+        "inch"
       ]
     },
     "docs": [
