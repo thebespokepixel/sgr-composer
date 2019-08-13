@@ -33,6 +33,6 @@ import SGRcomposer from 'sgr-composer'
 
 ## Documentation
 
-Full documentation can be found at [https://markgriffiths.github.io/sgr-composer][1]
+Full documentation can be found at [https://thebespokepixel.github.io/sgr-composer][1]
 
-[1]: https://markgriffiths.github.io/sgr-composer
+[1]: https://thebespokepixel.github.io/sgr-composer
