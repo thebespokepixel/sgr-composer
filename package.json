@@ -1,6 +1,6 @@
 {
   "name": "sgr-composer",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "files": [
@@ -36,25 +36,26 @@
   },
   "homepage": "https://github.com/thebespokepixel/sgr-composer#readme",
   "dependencies": {
-    "color-convert": "^2.0.0"
+    "color-convert": "^2.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "ava": "^2.2.0",
-    "documentation-theme-bespoke": "^1.0.0",
+    "@ava/babel": "^1.0.1",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "ava": "^3.3.0",
+    "documentation-theme-bespoke": "^1.1.2",
     "gulp": "^4.0.2",
     "gulp-better-rollup": "^4.0.1",
-    "gulp-rename": "^1.4.0",
-    "nyc": "^14.1.1",
-    "rollup": "^1.19.4",
+    "gulp-rename": "^2.0.0",
+    "nyc": "^15.0.0",
+    "rollup": "^1.31.1",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "xo": "^0.24.0"
+    "xo": "^0.26.1"
   },
   "engines": {
-    "node": ">=8.0"
+    "node": ">=10.0"
   },
   "xo": {
     "semicolon": false,
@@ -63,6 +64,12 @@
       "index.js",
       "index.mjs",
       "docs/**"
+    ]
+  },
+  "ava": {
+    "babel": true,
+    "files": [
+      "test/*.js"
     ]
   },
   "badges": {
