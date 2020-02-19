@@ -31,7 +31,7 @@ const _styles = {
  * @return {SGRColor} The color as an SGR pair.
  */
 function parseColor(color_, depth_, bg_) {
-	if (['reset', 'normal'].indexOf(color_) !== -1) {
+	if (['reset', 'normal'].includes(color_)) {
 		return _SGRparts.reset
 	}
 
@@ -111,7 +111,7 @@ function parseStyles(styles_) {
 			return styles
 		case Array.isArray(styles_):
 			Object.keys(styles).forEach(key_ => {
-				if (styles_.indexOf(key_) !== -1) {
+				if (styles_.includes(key_)) {
 					styles[key_] = true
 				}
 			})
@@ -135,11 +135,11 @@ function setStyles(styles, excluded_) {
 	const sgrOut = []
 	Object.keys(_styles).forEach(key_ => {
 		if (styles[key_] && (!excluded[key_])) {
-			if (sgrIn.indexOf(_styles[key_][0]) === -1) {
+			if (!sgrIn.includes(_styles[key_][0])) {
 				sgrIn.push(_styles[key_][0])
 			}
 
-			if (sgrOut.indexOf(_styles[key_][1]) === -1) {
+			if (!sgrOut.includes(_styles[key_][1])) {
 				sgrOut.unshift(_styles[key_][1])
 			}
 		}
@@ -163,11 +163,11 @@ export default class SGRcomposer {
 	constructor(targetDepth, styles) {
 		this._depth = (depth_ => {
 			switch (true) {
-				case [3, '16m', 'millions'].indexOf(depth_) !== -1:
+				case [3, '16m', 'millions'].includes(depth_):
 					return 3
-				case [2, 256, '256', 'hundreds'].indexOf(depth_) !== -1:
+				case [2, 256, '256', 'hundreds'].includes(depth_):
 					return 2
-				case [1, 8, '8', 16, '16', 'ansi', 'color'].indexOf(depth_) !== -1:
+				case [1, 8, '8', 16, '16', 'ansi', 'color'].includes(depth_):
 					return 1
 				default:
 					return 0
@@ -191,6 +191,15 @@ export default class SGRcomposer {
 	 */
 	get color() {
 		return this._color
+	}
+
+	/**
+	 * Set the current color
+	 * @param  {number[]} color RGB as an array.
+	 */
+	set color(color) {
+		this.colorSGR = parseColor(color, this._depth, false)
+		this._color = color
 	}
 
 	/**
@@ -261,15 +270,6 @@ export default class SGRcomposer {
 		const styles = []
 		Object.keys(this.styles).forEach(key_ => (this.styles[key_] === true) && styles.push(key_))
 		return styles
-	}
-
-	/**
-	 * Set the current color
-	 * @param  {number[]} color RGB as an array.
-	 */
-	set color(color) {
-		this.colorSGR = parseColor(color, this._depth, false)
-		this._color = color
 	}
 
 	/**
