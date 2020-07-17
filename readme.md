@@ -9,8 +9,7 @@
 
 ##### Development Status
 
-[![Greenkeeper](https://badges.greenkeeper.io/thebespokepixel/sgr-composer.svg)](https://greenkeeper.io/ "Greenkeeper") [![Travis](https://img.shields.io/travis/com/thebespokepixel/sgr-composer/develop?logo=travis)](https://travis-ci.com/thebespokepixel/sgr-composer "Travis")  
- [![David](https://david-dm.org/thebespokepixel/sgr-composer/develop/status.svg)](https://david-dm.org/thebespokepixel/sgr-composer/develop "David") [![David-developer](https://david-dm.org/thebespokepixel/sgr-composer/develop/dev-status.svg)](https://david-dm.org/thebespokepixel/sgr-composer/develop?type=dev "David-developer")  
+[![Travis](https://img.shields.io/travis/com/thebespokepixel/sgr-composer/develop?logo=travis)](https://travis-ci.com/thebespokepixel/sgr-composer "Travis") [![David](https://david-dm.org/thebespokepixel/sgr-composer/develop/status.svg)](https://david-dm.org/thebespokepixel/sgr-composer/develop "David") [![David-developer](https://david-dm.org/thebespokepixel/sgr-composer/develop/dev-status.svg)](https://david-dm.org/thebespokepixel/sgr-composer/develop?type=dev "David-developer")  
  [![Snyk](https://snyk.io/test/github/thebespokepixel/sgr-composer/badge.svg)](https://snyk.io/test/github/thebespokepixel/sgr-composer "Snyk") [![Code-climate](https://api.codeclimate.com/v1/badges/7a4d648e47d78e90f3a4/maintainability)](https://codeclimate.com/github/thebespokepixel/sgr-composer/maintainability "Code-climate") [![Coverage](https://api.codeclimate.com/v1/badges/7a4d648e47d78e90f3a4/test_coverage)](https://codeclimate.com/github/thebespokepixel/sgr-composer/test_coverage "Coverage")   
 
 ##### Documentation/Help
