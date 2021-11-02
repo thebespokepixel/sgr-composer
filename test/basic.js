@@ -1,5 +1,5 @@
 import test from 'ava'
-import SGRcomposer from '..'
+import SGRcomposer from '../index.js'
 
 test('4 bit SGRComposer', t => {
 	const composer = new SGRcomposer('color')
@@ -7,11 +7,11 @@ test('4 bit SGRComposer', t => {
 	composer.style = {
 		color: [0x33, 0x99, 0x33],
 		bold: true,
-		dim: true
+		dim: true,
 	}
 	t.deepEqual(composer.sgr(), {
 		in: '\u001B[32;1;2m',
-		out: '\u001B[22;39m'
+		out: '\u001B[22;39m',
 	}, 'SGRs unmatched.')
 })
 
@@ -22,19 +22,19 @@ test('24 bit SGRComposer I', t => {
 	composer.style = ['bold', 'italic']
 	t.deepEqual(composer.sgr(), {
 		in: '\u001B[38;2;255;51;102;1;3m',
-		out: '\u001B[23;22;39m'
+		out: '\u001B[23;22;39m',
 	}, 'SGRs unmatched.')
 })
 
 test('24 bit SGRComposer II', t => {
 	const composer = new SGRcomposer('millions', {
 		color: [0xFF, 0x33, 0x66],
-		invert: true
+		invert: true,
 	})
 	t.is(composer.depth, 3, 'Color depths unmatched.')
 	t.deepEqual(composer.sgr(), {
 		in: '\u001B[38;2;255;51;102;7m',
-		out: '\u001B[27;39m'
+		out: '\u001B[27;39m',
 	}, 'SGRs unmatched.')
 })
 
@@ -44,7 +44,7 @@ test('8 bit SGRComposer', t => {
 	composer.color = [0xFF, 0x33, 0x66]
 	t.deepEqual(composer.sgr(), {
 		in: '\u001B[38;5;204m',
-		out: '\u001B[39m'
+		out: '\u001B[39m',
 	}, 'SGRs unmatched.')
 })
 
@@ -54,19 +54,19 @@ test('Reset SGRComposer', t => {
 	composer.color = 'reset'
 	t.deepEqual(composer.sgr(), {
 		in: '\u001B[0m',
-		out: '\u001B[m'
+		out: '\u001B[m',
 	}, 'SGRs unmatched.')
 })
 
 test('Normal SGRComposer', t => {
 	const composer = new SGRcomposer('16m', {
-		color: 'normal'
+		color: 'normal',
 	})
 	t.is(composer.depth, 3, 'Color depths unmatched.')
 	composer.color = 'reset'
 	t.deepEqual(composer.sgr(), {
 		in: '\u001B[0m',
-		out: '\u001B[m'
+		out: '\u001B[m',
 	}, 'SGRs unmatched.')
 })
 
@@ -112,7 +112,7 @@ test('SGRComposer Style Array', t => {
 test('24 bit SGRComposer II as String', t => {
 	const composer = new SGRcomposer('millions', {
 		color: [0xFF, 0x33, 0x66],
-		invert: true
+		invert: true,
 	})
 	t.is(composer.depth, 3, 'Color depths unmatched.')
 	t.is(composer.sgr().toString(), '\u001B[38;2;255;51;102;7m')
