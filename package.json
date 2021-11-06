@@ -1,6 +1,6 @@
 {
   "name": "sgr-composer",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Compose SGR codes from RGB values",
   "main": "index.js",
   "types": "index.d.ts",
